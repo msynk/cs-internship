@@ -1,15 +1,14 @@
-var todoInput = document.getElementById('todo-input'),
-    todoList = document.getElementById('todo-list');
+var _todoInput = document.getElementById('todo-input'),
+    _todoList = document.getElementById('todo-list'),
+    _todos = [];
 
-var todos = [];
-
-todoInput.focus();
+_todoInput.focus();
 
 function addTodo() {
-    var todo = todoInput.value;
+    var todo = _todoInput.value;
     if (!todo) return alert('Please enter a todo.');
-    todoInput.value = '';
-    todos.push(todo);
+    _todoInput.value = '';
+    _todos.unshift(todo);
     render();
 }
 
@@ -18,9 +17,9 @@ function addTodo() {
 
 
 function render() {
-    todoList.innerHTML = '';
-    todos.reverse().forEach(function (t, index) {
-        todoList.append(createLi(t, ++index));
+    _todoList.innerHTML = '';
+    _todos.forEach(function (t, index) {
+        _todoList.append(createLi(t, ++index));
     });
 }
 
