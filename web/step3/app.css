@@ -3,6 +3,7 @@
     border-radius: 3px;
     font-family: sans-serif;
     font-size: 15px;
+    outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -15,21 +16,30 @@
 
 .body {
     background-color: rgb(251, 251, 252);
+    position: relative;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    margin: 200px auto;
-    width: 300px;
-    height: 500px;
+    width: 100%;
+    height: 546px;
     background-color: rgb(228, 229, 238);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .todo-form {
     width: 100%;
-    height: 58px;
+    height: 75px;
     background-color: rgb(70, 83, 158);
     display: flex;
     padding: 15px;
+    align-items: center;
 }
 
 #todo-input {
@@ -38,7 +48,8 @@
     color: black;
     border: none;
     width: 90%;
-    height: 28px;
+    height: 35px;
+    border: 1px solid rgb(127, 167, 251);
 }
 
 input[type=submit] {
@@ -47,25 +58,108 @@ input[type=submit] {
     background-color: rgb(127, 167, 251);
     color: white;
     border: none;
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     text-align: center;
-    font-size: 21px;
+    font-size: 25px;
     font-family: sans-serif;
 }
 
 #todo-list {
     padding: 0px;
-    margin: 20px 7px;
+    margin: 14px 7px;
     overflow: auto;
     height: 418px;
 }
 
 .todo-item {
     list-style: none;
-    padding: 13px 0px 0px 7px;
+    padding: 13px 0px 0px 37px;
     background-color: white;
     margin: 5px 5px 0px 5px;
     height: 47px;
-    margin-right: 5px;
+    display: flex;
+    justify-items: center;
+    position: relative;
+}
+
+.todo-item:hover {
+    background-color: rgb(245, 247, 250);
+    cursor: pointer;
+}
+
+.todo-complete {
+    background-image: url("Images/circle-shape.png");
+    background-repeat: no-repeat;
+    border: none;
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+}
+
+.todo-complete:hover {
+    cursor: pointer;
+}
+
+.todo-item-completed {
+    background-image: linear-gradient(to right, rgb(245, 247, 250), white);
+    color: rgb(174, 178, 182);
+    padding-left: 20px;
+}
+
+li.todo-item-completed>span.todo-title {
+    text-decoration: line-through;
+}
+
+li.todo-item-completed>button.todo-complete {
+    display: none;
+}
+
+.todo-filter {
+    position: absolute;
+    top: 522px;
+    background-color: rgb(70, 83, 158);
+    width: 100%;
+    height: 34px;
+    text-align: center;
+}
+
+.todo-title {
+    width: 217px;
+    margin-left: 4px;
+}
+
+.todo-remove {
+    margin-right: 10px;
+    background-image: url("Images/rubber.png");
+    background-repeat: no-repeat;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+
+.todo-remove:hover {
+    cursor: pointer;
+}
+
+div.todo-filter>button {
+    background-color: rgb(127, 167, 251);
+    border: none;
+    color: white;
+    height: 60%;
+    font-size: 14px;
+    margin: 7px 6px;
+}
+
+div.todo-filter>button:focus {
+    background-color: rgb(228, 229, 238);
+    color: #6b6a6a;
+    border: 1px solid rgb(127, 167, 251);
+}
+
+div.todo-filter>button:hover {
+    cursor: pointer;
 }

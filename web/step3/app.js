@@ -67,14 +67,14 @@ function createLi(todo, index) {
     titleSpan.textContent = todo.title;
     titleSpan.className = 'todo-title';
 
-    completeButton.textContent = 'V';
+    // completeButton.textContent = 'V';
     completeButton.className = 'todo-complete';
     completeButton.onclick = function () {
         todo.completed = !todo.completed;
         render();
     };
 
-    removeButton.textContent = 'X';
+    // removeButton.textContent = 'X';
     removeButton.className = 'todo-remove';
     removeButton.onclick = function () {
         todo.removed = true;
