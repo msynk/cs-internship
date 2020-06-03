@@ -23,45 +23,44 @@
 
 .container {
     width: 100%;
-    height: 546px;
+    height: 521px;
     background-color: rgb(228, 229, 238);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 300px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(63, 81, 181, 0.28), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .todo-form {
     width: 100%;
-    height: 75px;
+    height: 56px;
     background-color: rgb(70, 83, 158);
     display: flex;
-    padding: 15px;
+    padding-left: 3px;
     align-items: center;
 }
 
 #todo-input {
-    padding: 7px;
+    padding-left: 22px;
     background-color: rgb(228, 229, 238);
     color: black;
     border: none;
     width: 90%;
-    height: 35px;
-    border: 1px solid rgb(127, 167, 251);
+    height: 90%;
 }
 
 input[type=submit] {
     margin: 0px 3px;
     padding: 0px;
-    background-color: rgb(127, 167, 251);
+    background-color: rgb(70, 83, 158);
     color: white;
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 90%;
     text-align: center;
-    font-size: 25px;
+    font-size: 27px;
     font-family: sans-serif;
 }
 
@@ -69,18 +68,20 @@ input[type=submit] {
     padding: 0px;
     margin: 14px 7px;
     overflow: auto;
-    height: 418px;
+    height: 403px;
 }
 
 .todo-item {
     list-style: none;
-    padding: 13px 0px 0px 37px;
+    padding: 0px 0px 0px 37px;
     background-color: white;
     margin: 5px 5px 0px 5px;
-    height: 47px;
+    height: 52px;
     display: flex;
     justify-items: center;
     position: relative;
+    box-shadow: 0 1px 2px 0 rgba(33, 150, 243, 0.25), 0 20px 50px 0 rgba(63, 81, 181, 0.12);
+    align-items: center;
 }
 
 .todo-item:hover {
@@ -119,10 +120,10 @@ li.todo-item-completed>button.todo-complete {
 
 .todo-filter {
     position: absolute;
-    top: 522px;
-    background-color: rgb(70, 83, 158);
+    top: 483px;
+    background-color: rgb(228, 229, 238);
     width: 100%;
-    height: 34px;
+    height: 36px;
     text-align: center;
 }
 
@@ -146,18 +147,19 @@ li.todo-item-completed>button.todo-complete {
 }
 
 div.todo-filter>button {
-    background-color: rgb(127, 167, 251);
+    background-color: rgb(70, 83, 158);
     border: none;
     color: white;
-    height: 60%;
+    height: 83%;
     font-size: 14px;
-    margin: 7px 6px;
+    margin-right: 6px;
 }
 
 div.todo-filter>button:focus {
-    background-color: rgb(228, 229, 238);
+    background-color: white;
     color: #6b6a6a;
     border: 1px solid rgb(127, 167, 251);
+    box-shadow: 0 1px 2px 0 rgba(33, 150, 243, 0.25), 0 20px 50px 0 rgba(63, 81, 181, 0.12);
 }
 
 div.todo-filter>button:hover {
