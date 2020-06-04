@@ -155,7 +155,7 @@ div.todo-filter>button {
     margin-right: 6px;
 }
 
-div.todo-filter>button:focus {
+div.todo-filter>button.active {
     background-color: white;
     color: #6b6a6a;
     border: 1px solid rgb(127, 167, 251);
