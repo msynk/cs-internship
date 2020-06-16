@@ -22,6 +22,20 @@
     margin: 0;
 }
 
+button{
+    background-color: rgb(70, 83, 158);
+    border: none;
+    color: white;
+    height: 27px;
+    font-size: 14px;
+    margin-right: 6px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
 .container {
     width: 100%;
     height: 521px;
@@ -74,7 +88,7 @@ input[type=submit] {
 
 .todo-item {
     list-style: none;
-    padding: 0px 0px 0px 37px;
+    padding-left: 32px;
     background-color: white;
     margin: 5px 5px 0px 5px;
     height: 52px;
@@ -85,16 +99,16 @@ input[type=submit] {
     align-items: center;
 }
 
-.todo-item:hover {
+li.todo-item:hover {
     background-color: rgb(245, 247, 250);
 }
 
 .todo-complete {
-    background-image: url("Images/circle-shape.png");
+    background-image: url("Images/ring.png");
     background-repeat: no-repeat;
     border: none;
     position: absolute;
-    left: 12px;
+    left: 9px;
     width: 16px;
     height: 16px;
     background-color: transparent;
@@ -107,7 +121,6 @@ input[type=submit] {
 .todo-item-completed {
     background-image: linear-gradient(to right, rgb(245, 247, 250), white);
     color: rgb(174, 178, 182);
-    padding-left: 20px;
 }
 
 li.todo-item-completed>span.todo-title {
@@ -115,7 +128,14 @@ li.todo-item-completed>span.todo-title {
 }
 
 li.todo-item-completed>button.todo-complete {
-    display: none;
+    background-image: url("Images/check.png");
+    background-repeat: no-repeat;
+    border: none;
+    position: absolute;
+    left: 9px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
 }
 
 .todo-filter {
@@ -128,18 +148,19 @@ li.todo-item-completed>button.todo-complete {
 }
 
 .todo-title {
-    width: 217px;
+    width: 169px;
     margin-left: 4px;
     overflow-x: auto;
     white-space: nowrap;
     margin-right: 15px;
-    padding-bottom: 6px;
-    margin-top: 10px;
+    /* padding-bottom: 6px;
+    margin-top: 10px; */
 }
 
 .todo-remove {
-    margin-right: 10px;
-    background-image: url("Images/rubber.png");
+    position: absolute;
+    right: 5px;
+    background-image: url("Images/cancel\ \(1\).png");
     background-repeat: no-repeat;
     border: none;
     width: 20px;
@@ -151,14 +172,25 @@ li.todo-item-completed>button.todo-complete {
     cursor: pointer;
 }
 
-div.todo-filter>button {
+.todo-edit{
+    position: absolute;
+    right: 26px;
+    background-image: url("Images/edit\ \(1\).png");
+    background-repeat: no-repeat;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+
+/* div.todo-filter>button {
     background-color: rgb(70, 83, 158);
     border: none;
     color: white;
-    height: 83%;
+    height: 27px;
     font-size: 14px;
     margin-right: 6px;
-}
+} */
 
 div.todo-filter>button.active {
     background-color: white;
@@ -167,6 +199,22 @@ div.todo-filter>button.active {
     box-shadow: 0 1px 2px 0 rgba(33, 150, 243, 0.25), 0 20px 50px 0 rgba(63, 81, 181, 0.12);
 }
 
-div.todo-filter>button:hover {
-    cursor: pointer;
+li.todo-item-editting{
+    padding-left: 11px;
+}
+
+li.todo-item-editting>button:hover{
+    background-color: white;
+    color: #6b6a6a;
+    border: 1px solid rgb(127, 167, 251);
+}
+
+li.todo-item-editting>input{
+    padding: 0px 5px;
+    background-color: rgb(228, 229, 238);
+    color: black;
+    border: none;
+    width: 90%;
+    height: 27px;
+    border: 1px solid rgb(70, 83, 158);
 }

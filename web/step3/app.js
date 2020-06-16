@@ -86,7 +86,7 @@ function createNormalLi(todo , index) {
         render();
     }
 
-    editButton.textContent = 'E';
+    // editButton.textContent = 'E';
     editButton.className = 'todo-edit';
     editButton.onclick = function () {
         todo.editting = true;
