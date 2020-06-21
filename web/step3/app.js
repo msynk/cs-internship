@@ -1,7 +1,8 @@
 var _todoInput = document.getElementById('todo-input'),
     _todoList = document.getElementById('todo-list'),
     _todos = [],
-    _filter = 0;
+    _filter = 0,
+    _lastEditingTodo = null;
 
 init();
 
@@ -58,7 +59,7 @@ function createLi(todo, index) {
     return todo.editting ? createEdittingLi(todo, index) : createNormalLi(todo, index);
 }
 
-function createNormalLi(todo , index) {
+function createNormalLi(todo, index) {
     var li = document.createElement('li'),
         indexSpan = document.createElement('span'),
         titleSpan = document.createElement('span'),
@@ -90,6 +91,7 @@ function createNormalLi(todo , index) {
     editButton.className = 'todo-edit';
     editButton.onclick = function () {
         todo.editting = true;
+        _lastEditingTodo = todo;
         render();
     }
 
@@ -115,8 +117,11 @@ function createEdittingLi(todo, index) {
 
     titleInput.value = todo.title;
     titleInput.className = 'todo-title';
+    if (_lastEditingTodo === todo) {
+        setTimeout(function () { titleInput.focus(); });
+    }
 
-    okButton.textContent = 'OK';
+    // okButton.textContent = 'OK';
     okButton.className = 'todo-editting-ok';
     okButton.onclick = function () {
         todo.title = titleInput.value || todo.title;
@@ -124,7 +129,7 @@ function createEdittingLi(todo, index) {
         render();
     };
 
-    cancelButton.textContent = 'Cancel';
+    // cancelButton.textContent = 'Cancel';
     cancelButton.className = 'todo-editting-cancel';
     cancelButton.onclick = function () {
         todo.editting = false;

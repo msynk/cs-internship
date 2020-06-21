@@ -11,6 +11,7 @@
     height: 3px;
 }
 
+
 ::-webkit-scrollbar-thumb {
     background: #9e9e9e70;
 }
@@ -22,13 +23,22 @@
     margin: 0;
 }
 
-button{
+div.todo-filter>button{
     background-color: rgb(70, 83, 158);
     border: none;
     color: white;
     height: 27px;
     font-size: 14px;
-    margin-right: 6px;
+}
+
+li>button{
+    background-repeat: no-repeat;
+    border: none;
+    position: absolute;   
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+    padding: 0px 0px;
 }
 
 button:hover{
@@ -105,18 +115,9 @@ li.todo-item:hover {
 
 .todo-complete {
     background-image: url("Images/ring.png");
-    background-repeat: no-repeat;
-    border: none;
-    position: absolute;
     left: 9px;
-    width: 16px;
-    height: 16px;
-    background-color: transparent;
 }
 
-.todo-complete:hover {
-    cursor: pointer;
-}
 
 .todo-item-completed {
     background-image: linear-gradient(to right, rgb(245, 247, 250), white);
@@ -129,13 +130,7 @@ li.todo-item-completed>span.todo-title {
 
 li.todo-item-completed>button.todo-complete {
     background-image: url("Images/check.png");
-    background-repeat: no-repeat;
-    border: none;
-    position: absolute;
     left: 9px;
-    width: 16px;
-    height: 16px;
-    background-color: transparent;
 }
 
 .todo-filter {
@@ -148,49 +143,22 @@ li.todo-item-completed>button.todo-complete {
 }
 
 .todo-title {
-    width: 169px;
-    margin-left: 4px;
+    width: 178px;
+    padding: 0px 3px;
     overflow-x: auto;
     white-space: nowrap;
-    margin-right: 15px;
-    /* padding-bottom: 6px;
-    margin-top: 10px; */
 }
 
 .todo-remove {
-    position: absolute;
-    right: 5px;
-    background-image: url("Images/cancel\ \(1\).png");
-    background-repeat: no-repeat;
-    border: none;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-}
+    background-image: url("Images/cancel.png");
+    right: 8px;
+    }
 
-.todo-remove:hover {
-    cursor: pointer;
-}
 
 .todo-edit{
-    position: absolute;
-    right: 26px;
-    background-image: url("Images/edit\ \(1\).png");
-    background-repeat: no-repeat;
-    border: none;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
+    background-image: url("Images/edit.png");
+    right: 29px;
 }
-
-/* div.todo-filter>button {
-    background-color: rgb(70, 83, 158);
-    border: none;
-    color: white;
-    height: 27px;
-    font-size: 14px;
-    margin-right: 6px;
-} */
 
 div.todo-filter>button.active {
     background-color: white;
@@ -201,20 +169,36 @@ div.todo-filter>button.active {
 
 li.todo-item-editting{
     padding-left: 11px;
+    background-color: rgb(70, 83, 158);
 }
 
-li.todo-item-editting>button:hover{
-    background-color: white;
-    color: #6b6a6a;
-    border: 1px solid rgb(127, 167, 251);
+li.todo-item-editting:hover{
+    background-color: rgb(70, 83, 158);
 }
 
 li.todo-item-editting>input{
     padding: 0px 5px;
     background-color: rgb(228, 229, 238);
-    color: black;
+    color: #6b6a6a;
     border: none;
-    width: 90%;
-    height: 27px;
-    border: 1px solid rgb(70, 83, 158);
+    width: 83%;
+    height: 46px;
+    margin-left: 3px;
 }
+
+.todo-editting-ok{
+    background-image: url(Images/verified.png);
+    right: 6px;
+    top: 8px;
+}
+
+.todo-editting-cancel{
+    background-image: url(Images/error.png);
+    right: 6px;
+    top: 28px;
+}
+
+li.todo-item-editting>span{
+    color: white;
+}
+
