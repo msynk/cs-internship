@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App v3.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" onclick="event.stopPropagation()">
+        <form class="todo-form" onsubmit="event.preventDefault(); addTodo();">
+            <input id="todo-input" placeholder="Add New Todo..." autocomplete="off">
+            <input type="submit" value="+">
+        </form>
+        <ul id="todo-list"></ul>
+        <div class="todo-filter" onclick="filterTodos(event)">
+            <button value="0" class="active">All</button>
+            <button value="1">Active</button>
+            <button value="2">Completed</button>
+        </div>
+    </div>
+    <script src="scripts/model.js"></script>
+    <script src="scripts/view.js"></script>
+    <script src="scripts/controller.js"></script>
+</body>
+
+</html>
